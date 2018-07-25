@@ -6,6 +6,7 @@ Command line interface for managing customers. Uses Mongoose, Commander.js and I
 1.0.2
 
 ## Usage
+Simple Command Line Interface to manage customers in database
 
 ### Installation
 
@@ -48,16 +49,10 @@ Remove Customer (remove or r)
 $ client-cli remove [_ID]
 ```
 
-## App Info
-
 ### Author
 
 Andrew Waller
 [Adrw4](https://andrewwaller.github.io/)
-
-### Version
-
-1.0.0
 
 ### License
 
