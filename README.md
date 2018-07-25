@@ -3,7 +3,7 @@
 Command line interface for managing customers. Uses Mongoose, Commander.js and Inquirer.js
 
 ### Version
-1.0.0
+1.0.2
 
 ## Usage
 
@@ -25,17 +25,17 @@ $ npm link
 
 List Customers (list or l)
 ```sh
-$ client-cli list
+$ customer-cli list
 ```
 
 Find Customers (find or f)
 ```sh
-$ client-cli find [NAME]
+$ customer-cli find [NAME]
 ```
 
 Add Customer (add or a)
 ```sh
-$ client-cli add
+$ customer-cli add
 ```
 
 Update Customer (update or u)

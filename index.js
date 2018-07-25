@@ -12,7 +12,7 @@ const Customer = require('./models/customer');
 const addCustomer = (customer) => {
   Customer.create(customer).then(customer => {
     console.info('New Customer Added');
-    db.close();
+    process.exit();
   });
 }
 
@@ -24,7 +24,7 @@ const findCustomer = (name) => {
     .then(customer => {
       console.info(customer);
       console.info(`${customer.length} matches`);
-      db.close();
+      process.exit();
     });
 }
 
@@ -33,7 +33,7 @@ const updateCustomer = (_id, customer) => {
   Customer.update({ _id }, customer)
     .then(customer => {
       console.info('Customer Updated');
-      db.close();
+      process.exit();
     });
 }
 
@@ -42,7 +42,7 @@ const removeCustomer = (_id) => {
   Customer.remove({ _id })
     .then(customer => {
       console.info('Customer Removed');
-      db.close();
+      process.exit();
     });
 }
 
@@ -52,7 +52,7 @@ const listCustomers = () => {
     .then(customers => {
       console.info(customers);
       console.info(`${customers.length} customers`);
-      db.close();
+      process.exit();
     });
 }
 
