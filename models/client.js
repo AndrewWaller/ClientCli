@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// Customer Schema
-const customerSchema = mongoose.Schema({
+// Client Schema
+const clientSchema = mongoose.Schema({
     firstname: { type: String },
     lastname: { type: String },
     phone: { type: Number },
@@ -9,4 +9,4 @@ const customerSchema = mongoose.Schema({
 });
 
 // Define and support
-module.exports = mongoose.model('Customer', customerSchema);
+module.exports = mongoose.model('Client', clientSchema);

@@ -2,37 +2,38 @@
 const program = require('commander');
 const { prompt } = require('inquirer');
 const {
-  addCustomer,
-  findCustomer,
-  updateCustomer,
-  removeCustomer,
-  listCustomers
+  addClient,
+  findClient,
+  updateClient,
+  removeClient,
+  listClients
 } = require('./index');
 
-// Customer Questions
+// Client Questions
 const questions = [
   {
     type: 'input',
     name: 'firstname',
-    message: 'Customer First Name'
+    message: 'Client First Name'
   },
   {
     type: 'input',
     name: 'lastname',
-    message: 'Customer Last Name'
+    message: 'Client Last Name'
   },
   {
     type: 'input',
     name: 'phone',
-    message: 'Customer Phone Number'
+    message: 'Client Phone Number'
   },
   {
     type: 'input',
     name: 'email',
-    message: 'Customer Email Address'
+    message: 'Client Email Address'
   }
 ];
 
+// Version Command
 program 
     .version(`
     ___      _                 ___ _       _____           _                                   _____  _     _____ 
@@ -44,51 +45,43 @@ program
     v.1.0.2`, '-v, --version')
   .description('Client Management System')
 
-// program
-//   .command('add <firstname> <lastname> <phone> <email>')
-//   .alias('a')
-//   .description('Add a customer')
-//   .action((firstname, lastname, phone, email) => {
-//     addCustomer({firstname, lastname, phone, email});
-//   });
-
 // Add Command
 program
   .command('add')
   .alias('a')
-  .description('Add a customer')
+  .description('Add a client')
   .action(() => {
-    prompt(questions).then(answers => addCustomer(answers));
+    prompt(questions).then(answers => addClient(answers));
   });
 
 // Find Command
 program
   .command('find <name>')
   .alias('f')
-  .description('Find a customer')
-  .action(name => findCustomer(name));
+  .description('Find a client')
+  .action(name => findClient(name));
 
 // Update Command
 program
   .command('update <_id>')
   .alias('u')
-  .description('Update a customer')
+  .description('Update a client')
   .action(_id => {
-    prompt(questions).then(answers => updateCustomer(_id, answers));
+    prompt(questions).then(answers => updateClient(_id, answers));
   });
 
 // Remove Command
 program
   .command('remove <_id>')
   .alias('r')
-  .description('Remove a customer')
-  .action(_id => removeCustomer(_id));
+  .description('Remove a client')
+  .action(_id => removeClient(_id));
 
 // List Command
 program
   .command('list')
   .alias('l')
-  .description('List all customers')
-  .action(() => listCustomers());
+  .description('List all clients')
+  .action(() => listClients());
 
 program.parse(process.argv);

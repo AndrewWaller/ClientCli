@@ -1,7 +1,7 @@
 {
-  "name": "customer-cli",
+  "name": "client-cli",
   "version": "1.0.0",
-  "description": "Customer management CLI",
+  "description": "Client management CLI",
   "main": "index.js",
   "preferGlobal": true,
   "bin": "./commands.js",

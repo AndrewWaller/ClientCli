@@ -3,64 +3,64 @@ const mongoose = require('mongoose');
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
 // Connect to db
-const db = mongoose.connect('mongodb://localhost:27017/customercli', { useNewUrlParser: true });
+const db = mongoose.connect('mongodb://localhost:27017/clientcli', { useNewUrlParser: true });
 
 // Import model
-const Customer = require('./models/customer');
+const Client = require('./models/client');
 
-// Add Customer
-const addCustomer = (customer) => {
-  Customer.create(customer).then(customer => {
-    console.info('New Customer Added');
+// Add Client
+const addClient = (client) => {
+  Client.create(client).then(client => {
+    console.info('New Client Added');
     process.exit();
   });
 }
 
-// Find Customer
-const findCustomer = (name) => {
+// Find Client
+const findClient = (name) => {
   // Make case insensitive
   const search = new RegExp(name, 'i');
-  Customer.find({$or: [{firstname: search}, {lastname: search}]})
-    .then(customer => {
-      console.info(customer);
-      console.info(`${customer.length} matches`);
+  Client.find({$or: [{firstname: search}, {lastname: search}]})
+    .then(client => {
+      console.info(client);
+      console.info(`${client.length} matches`);
       process.exit();
     });
 }
 
-// Update Customer
-const updateCustomer = (_id, customer) => {
-  Customer.update({ _id }, customer)
-    .then(customer => {
-      console.info('Customer Updated');
+// Update Client
+const updateClient = (_id, client) => {
+  Client.update({ _id }, client)
+    .then(client => {
+      console.info('Client Updated');
       process.exit();
     });
 }
 
-// Remove Customer
-const removeCustomer = (_id) => {
-  Customer.remove({ _id })
-    .then(customer => {
-      console.info('Customer Removed');
+// Remove Client
+const removeClient = (_id) => {
+  Client.remove({ _id })
+    .then(client => {
+      console.info('Client Removed');
       process.exit();
     });
 }
 
-// List Customers
-const listCustomers = () => {
-  Customer.find()
-    .then(customers => {
-      console.info(customers);
-      console.info(`${customers.length} customers`);
+// List Clients
+const listClients = () => {
+  Client.find()
+    .then(clients => {
+      console.info(clients);
+      console.info(`${clients.length} clients`);
       process.exit();
     });
 }
 
 // Export All Methods
 module.exports = {
-  addCustomer,
-  findCustomer,
-  updateCustomer,
-  removeCustomer,
-  listCustomers
+  addClient,
+  findClient,
+  updateClient,
+  removeClient,
+  listClients
 }

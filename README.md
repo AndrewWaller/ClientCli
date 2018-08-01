@@ -1,12 +1,12 @@
-# Customer Management CLI
+# Client Management CLI
 
-Command line interface for managing customers. Uses Mongoose, Commander.js and Inquirer.js
+Command line interface for managing clients. Uses Mongoose, Commander.js and Inquirer.js
 
 ### Version
 1.0.2
 
 ## Usage
-Simple Command Line Interface to manage customers in database
+Simple Command Line Interface to manage clients in database
 
 ### Installation
 
@@ -24,27 +24,27 @@ $ npm link
 
 ### Commands
 
-List Customers (list or l)
+List Clients (list or l)
 ```sh
-$ customer-cli list
+$ client-cli list
 ```
 
-Find Customers (find or f)
+Find Clients (find or f)
 ```sh
-$ customer-cli find [NAME]
+$ client-cli find [NAME]
 ```
 
-Add Customer (add or a)
+Add Client (add or a)
 ```sh
-$ customer-cli add
+$ client-cli add
 ```
 
-Update Customer (update or u)
+Update Client (update or u)
 ```sh
 $ client-cli update [_ID]
 ```
 
-Remove Customer (remove or r)
+Remove Client (remove or r)
 ```sh
 $ client-cli remove [_ID]
 ```
