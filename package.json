@@ -1,6 +1,6 @@
 {
   "name": "client-cli",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Client management CLI",
   "main": "index.js",
   "preferGlobal": true,
